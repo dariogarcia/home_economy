@@ -8,6 +8,9 @@ class Movement:
         self.amount = amount
         self.category = None
 
+    def __repr__(self):
+        return "Movement: date:%s \n\tdescription:%s \n\tamount:%s \n\tcategory:%s" % (self.date, self.description, self.amount, self.category)
+
     def assign_category(self):
         found_categories = set()
         for cat_name,cat_terms in categories.items():

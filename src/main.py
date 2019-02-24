@@ -19,7 +19,12 @@ with open(file_name,'r') as f:
 som.assign_categories()
 
 
-#To implement in set_of_moves.py
-#som.filter_by_date(date_start,date_end)
+date_start = '01/01/2019'
+date_end = '10/01/2019'
+som_filtered = som.filter_by_date(date_start,date_end)
+
+for x in som_filtered.moves:
+    print(x)
+
 #print(som)
 #som.plot_histogram()
