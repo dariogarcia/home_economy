@@ -1,9 +1,11 @@
+from datetime import datetime
+
 from categories import categories
 
 class Movement:
     
     def __init__(self, date, description, amount):
-        self.date = date
+        self.date = datetime.strptime(date, '%d/%m/%Y')
         self.description = description
         self.amount = amount
         self.category = None
