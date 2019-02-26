@@ -7,7 +7,7 @@ class Movement:
     def __init__(self, date, description, amount):
         self.date = datetime.strptime(date, '%d/%m/%Y')
         self.description = description
-        self.amount = amount
+        self.amount = float(amount.replace(',',''))
         self.category = None
 
     def __repr__(self):

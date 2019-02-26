@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 
 from categories import categories
@@ -7,9 +7,11 @@ class SetOfMoves:
 
     def __init__(self):
         self.moves = []
+        self.months = set()
 
     def append_move(self,m):
         self.moves.append(m)
+        self.months.update((m.date.month,m.date.year))
 
     def assign_categories(self):
         for m in self.moves:
@@ -24,16 +26,47 @@ class SetOfMoves:
         return som_filtered
 
     def total_by_cat_and_month(self):
-        months = set()
+        months_idx = np.zeros((len(self.months),2))
+        last_month_idx = 0
+        cats_idx = np.array(categories.keys(),dtype='S10')
+        amount_by_month_and_cat = np.zeros((len(categories),len(self.months)))
+        #Sum costs of moves by month and cat
         for m in self.moves:
-            months.add((m.date.month,m.date.year))
-        total_months = len(months)
-        total_cats = len(categories)
-        np_data = np.array((total_months,total_cats))
-        #TODO
-        fill the matrix!
+            idx_cat, = np.where(cats_idx == m.category)
+            if len(idx_cat)!=1:
+                raise Exception('Repeated category? Category with more than 10 chars?',
+                        cats_idx,m.category,len(idx_cat))
+            idx_cat = idx_cat[0]
+            np_month = np.array([m.date.month,m.date.year])
+            [idx_mon] = np.where((months_idx == np_month).all(axis=1))
+            #Month exists
+            if idx_mon.shape != (0,):
+                amount_by_month_and_cat[idx_cat][idx_mon]+=m.amount
+            else:
+                months_idx[last_month_idx] = np_month
+                amount_by_month_and_cat[idx_cat][last_month_idx]+=m.amount
+                last_month_idx+=1
+        ##Create and fill label numpy (categories sorted)
+        #dtype = [('month', int), ('year', int)]
+        #ordered_months = np.array([*sum_by_months_and_cats], dtype=dtype)
+        #ordered_months = np.sort(ordered_months, order=['year','month'])
+        ##Create and fill data numpy
+        #month_and_cat_mat = np.zeros((len(categories),len(sum_by_months_and_cats)))
+        #for month in ordered_months:
+        #    for cat in categories.keys():
+        #        print(sum_by_months_and_cats[month][cat])
+        #        month_and_cat_mat[month][cat] = sum_by_months_and_cats[month][cat]
+        #print(month_and_cat_mat)
+        #todo_fill= dsfs
 
-        return np_data
+        #dtype = [('name', 'S10'), ('height', float), ('age', int)]
+        #values = [('Arthur', 1.8, 41), ('Lancelot', 1.9, 38),
+        #    ...           ('Galahad', 1.7, 38)]
+        #a = np.array(values, dtype=dtype)       # create a structured array
+        #np.sort(a, order='height')
+
+
+        return sum_np_data, month_and_cat_mat
 
     def plot_histogram(self):
 
