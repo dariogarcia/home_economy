@@ -9,9 +9,10 @@ class Movement:
         self.description = description
         self.amount = float(amount.replace(',',''))
         self.category = None
+        self.keywords = []
 
     def __repr__(self):
-        return "Movement: date:%s \n\tdescription:%s \n\tamount:%s \n\tcategory:%s" % (self.date, self.description, self.amount, self.category)
+        return "date:%s \n\tkeywords:%s \n\tamount:%s \n\tcategory:%s" % (self.date, self.keywords, self.amount, self.category)
 
     def assign_category(self):
         found_categories = set()
@@ -19,6 +20,7 @@ class Movement:
             for term in cat_terms:
                 if term in self.description:
                     found_categories.add(cat_name)
+                    self.keywords.append(term)
         if len(found_categories) == 0:
             print('Category not found for:',self.description,self.amount)
         if len(found_categories) == 2 and 'hipoteca' in found_categories:

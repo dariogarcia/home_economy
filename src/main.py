@@ -19,9 +19,16 @@ with open(file_name,'r') as f:
 som.assign_categories()
 
 #Filter set of moves based on dates
-#date_start = '01/01/2019'
-#date_end = '10/01/2019'
-#som_filtered = som.filter_by_date(date_start,date_end)
+date_start = '01/09/2018'
+date_end = '30/09/2018'
+som_filtered = som.filter_by_date(date_start,date_end)
 
+#Filter set of moves based on category
+category = 'rebuts'
+som_cat_filtered = som_filtered.filter_by_cat(category)
+total = 0
+for move in som_cat_filtered.moves:
+    print(move)
+    total+=move.amount
 #Print histogram
 som.plot_histogram()
