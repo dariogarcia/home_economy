@@ -36,7 +36,7 @@ categories.update({'a_domicili':['BIOCHEF',
                                         'SIN VERGUENZA',
                                         'RESTAURANTE',
                                         ]})
-categories.update({'menjar':['DIA',
+categories.update({'super i menjar':['DIA',
                             'A LA CART',
                             'DGUSTA',
                             'SERVIFRUIT',
@@ -74,12 +74,12 @@ categories.update({'panaderies':['TINYOL',
                                 'FIGULS',
                                 'LA REPOSADA',
                                 ]})
-categories.update({'menjarplus':['GRANER DE LA SUSI',
+categories.update({'menjar plus':['GRANER DE LA SUSI',
                             'VERITAS',
                             'CENTRE DIETETIC CASELLAS',
                             'CELLER TORRAS',
                             ]})
-categories.update({'extras':['DEL RETAL',
+categories.update({'extras varis':['DEL RETAL',
                             'CUCA DE LLUM',
                             'Photobox',
                             'TEATRES',
@@ -126,7 +126,7 @@ categories.update({'fungibles':['FARMACIA',
                             'FERRETERIA MUSTE',
                             'IKEA',
                             ]})
-categories.update({'cash':['Cargo cajero',
+categories.update({'reintegraments':['Cargo cajero',
                             'Reintegro Cajero',
                             ]})
 

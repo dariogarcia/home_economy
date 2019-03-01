@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import numpy as np
 from datetime import datetime
 
@@ -38,7 +39,7 @@ class SetOfMoves:
     def total_by_cat_and_month(self):
         months_idx = []
         last_month_idx = 0
-        cats_idx = np.array(categories.keys(),dtype='S10')
+        cats_idx = np.array(categories.keys(),dtype='S20')
         amount_by_month_and_cat = np.zeros((len(categories),len(self.months)))
         #Sum costs of moves by month and cat
         for m in self.moves:
@@ -75,4 +76,6 @@ class SetOfMoves:
         plt.grid()
         plt.legend(loc=0,ncol=3)
         plt.xticks(np.arange(num_months), months_labels)
+        ax = plt.gca()
+        ax.yaxis.set_major_locator(ticker.MultipleLocator(100))
         plt.show()
