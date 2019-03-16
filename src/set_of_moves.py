@@ -31,8 +31,14 @@ class SetOfMoves:
     def filter_by_cat(self,category):
         som_filtered = SetOfMoves()
         for move in self.moves:
-            #If date is in range, append
             if move.category == category:
+                som_filtered.append_move(move)
+        return som_filtered
+
+    def filter_out_by_cat(self,category):
+        som_filtered = SetOfMoves()
+        for move in self.moves:
+            if move.category != category:
                 som_filtered.append_move(move)
         return som_filtered
 

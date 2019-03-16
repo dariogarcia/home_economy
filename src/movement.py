@@ -22,6 +22,7 @@ class Movement:
                     found_categories.add(cat_name)
                     self.keywords.append(term)
         if len(found_categories) == 0:
+            print(self)
             print('Category not found for:',self.description,self.amount)
         if len(found_categories) == 2 and 'hipoteca' in found_categories:
             found_categories.remove('hipoteca')

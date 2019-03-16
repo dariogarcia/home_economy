@@ -10,6 +10,7 @@ categories.update({'hipoteca':['Transferencia',
                             'prestamo',
                             'Traspaso emitido',
                             'Traspaso recibido',
+                            'Traspaso interno'
                             ]})
 categories.update({'roba':['PRIVEE',
                     'Showroom',
@@ -35,6 +36,8 @@ categories.update({'a_domicili':['BIOCHEF',
                                         'ENOTECA PIRAS',
                                         'SIN VERGUENZA',
                                         'RESTAURANTE',
+                                        'PIZZA STICK',
+                                        'AVENC ESPLUGUES'
                                         ]})
 categories.update({'super i menjar':['DIA',
                             'A LA CART',
@@ -53,6 +56,8 @@ categories.update({'super i menjar':['DIA',
                             'CA LA REMEI ESPL',
                             'ALBERTMAT',
                             'ENRIC ECO',
+                            'CAL JAUME BELLVER',
+                            'CLAREL'
                             ]})
 categories.update({'rebuts':['YELLOW ENERGY',
                             'VOLKSWAGEN',
@@ -65,7 +70,11 @@ categories.update({'rebuts':['YELLOW ENERGY',
                             'NIMBONENS',
                             'RECIBO H.C.  Energia',
                             'EUROPOLIS',
-                            'LLAR INFANS NIMBO'
+                            'LLAR INFANS NIMBO',
+                            'AXA GLOBAL',
+                            'Cargo prima seguro',
+                            'Recibo OALGT',
+                            'Recibo NATIONALE NEDERLANDEN GENERALES'
                             ]})
 categories.update({'panaderies':['TINYOL',
                                 'BOULANGERIE',
@@ -105,11 +114,13 @@ categories.update({'extras varis':['DEL RETAL',
                             'SOULD PARK',
                             'TICKETMASTER',
                             'BUMBUETA',
+                            'TABACS',
+                            'SHOPDISNEY'
                             ]})
 categories.update({'cotxe':['ES LA SARDANA',
                             'ZONA BLAVA ESTACIONAMENT',
                             'PARKING',
-                            'Pago AP.',
+                            'Pago en AP.',
                             'SERVEI CATALA DE TRANSIT',
                             'GRUES BCN',
                             'A.C.E.S.A',
@@ -117,6 +128,11 @@ categories.update({'cotxe':['ES LA SARDANA',
                             'INVICAT',
                             'GASAOLINERA',
                             'PARK.MARQUES',
+                            'TUNELS CADI',
+                            'ON APARCAR',
+                            'ANEU OIL',
+                            'AUCAT BAR VALLCARCA',
+                            'AUCAT BAR CUBELLES'
                             ]})
 categories.update({'fungibles':['FARMACIA',
                             'AUBERT',
@@ -125,8 +141,12 @@ categories.update({'fungibles':['FARMACIA',
                             'ELECTRILAMP',
                             'FERRETERIA MUSTE',
                             'IKEA',
+                            'JUAN RODRIGUEZ CORNELLA',
+                            'CORREOS Y TELEGRAF',
+                            'YOIGO'
                             ]})
 categories.update({'reintegraments':['Cargo cajero',
                             'Reintegro Cajero',
+                            'Reintegro efectivo tarjeta'
                             ]})
 
